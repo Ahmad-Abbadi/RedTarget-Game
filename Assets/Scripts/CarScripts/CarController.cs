@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
+
+    [SerializeField] bool IsAi;
     [Header("Wheels")]
     [SerializeField]  WheelCollider FLW;
     [SerializeField] WheelCollider FRW;
@@ -95,66 +97,79 @@ public class CarController : MonoBehaviour
 
         carSpeed = (2 * Mathf.PI * FRW.radius * FRW.rpm * 60) / 1000;
 
-        if (Input.GetKey(KeyCode.W))
+        if (!IsAi)
         {
-            Forward();
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            Revers();
-        }
-        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.S))
-        {
-            ForwardSlip();
-            carParticalsSystem.ApplyParticals(true);
+            if (Input.GetKey(KeyCode.W))
+            {
+                Forward();
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                Revers();
+            }
+            if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.S))
+            {
+                ForwardSlip();
+                carParticalsSystem.ApplyParticals(true);
 
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                Left();
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                Right();
+            }
+            if (Input.GetKey(KeyCode.Space))
+            {
+                HandBrake();
+            }
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                ApplyTraction();
+            }
+            if (!Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.W))
+            {
+                StopCar();
+            }
+            if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+            {
+                ResetSteeringAngle();
+            }
         }
-        if (Input.GetKey(KeyCode.A))
-        {
-            Left();
-        }
-        if(Input.GetKey(KeyCode.D))
-        {
-            Right();
-        }
-        if(Input.GetKey(KeyCode.Space))
-        {
-            HandBrake();
-        }
-        if(Input.GetKeyUp(KeyCode.Space))
-        {
-            ApplyTraction();
-        }
-        if(!Input.GetKey(KeyCode.S) &&!Input.GetKey(KeyCode.W))
-        {
-            StopCar();
-        }
-        if(!Input.GetKey(KeyCode.A)&& !Input.GetKey(KeyCode.D))
-        {
-            ResetSteeringAngle();
-        }
+
             XVelocity = transform.InverseTransformDirection(carRigidbody.velocity).x;
             zVelocity = transform.InverseTransformDirection(carRigidbody.velocity).z;
         }
+    public void SetSteeringInput(float input)
+    {
+        
+        FRW.steerAngle = Mathf.Lerp(FRW.steerAngle, input, steeringSpeed);
+        FLW.steerAngle = Mathf.Lerp(FRW.steerAngle, input, steeringSpeed);
+    }
+
     private void ResetSteeringAngle()
     {
         //TODO Dear me for third time plz finish this function using lerp :)
         FRW.steerAngle = 0f;
         FLW.steerAngle = 0f;
     }
-    private void Right()
+    public void Right()
     {
-        steerAxis = steerAxis + (Time.deltaTime * steeringSpeed);
-        if (steerAxis > 1)
-        {
-            steerAxis = 1;
-        }
-
-        FRW.steerAngle = Mathf.Lerp(FRW.steerAngle, steerAxis * maxSpeedAngle, steeringSpeed);
-        FLW.steerAngle = Mathf.Lerp(FRW.steerAngle, steerAxis * maxSpeedAngle, steeringSpeed);
+        
+            steerAxis = steerAxis + (Time.deltaTime * steeringSpeed);
+            if (steerAxis > 1)
+            {
+                steerAxis = 1;
+            }
+            FRW.steerAngle = Mathf.Lerp(FRW.steerAngle, steerAxis * maxSpeedAngle, steeringSpeed);
+            FLW.steerAngle = Mathf.Lerp(FRW.steerAngle, steerAxis * maxSpeedAngle, steeringSpeed);
+       
+        
 
     }
-    private void Left()
+    public void Left()
     {
         steerAxis = steerAxis - (Time.deltaTime * steeringSpeed);
         if(steerAxis < -1 )
@@ -166,7 +181,7 @@ public class CarController : MonoBehaviour
         FLW.steerAngle = Mathf.Lerp(FRW.steerAngle, steerAxis * maxSpeedAngle, steeringSpeed);
 
     }
-    private void Forward()
+    public void Forward()
     {
         if (Mathf.Abs(XVelocity) > 2.5)
         {
@@ -250,7 +265,7 @@ public class CarController : MonoBehaviour
         BLW.brakeTorque = 0;
         BRW.brakeTorque = 0;
     }
-    private void Revers()
+    public void Revers()
     {
        if (Mathf.Abs(XVelocity) > 2.5)
         {
@@ -333,7 +348,7 @@ public class CarController : MonoBehaviour
         BLW.motorTorque = 0;
         BRW.motorTorque = 0;
     }
-    private void HandBrake()
+    public void HandBrake()
     {
         CancelInvoke("ApplyTraction");
         driftAxis = driftAxis + (Time.deltaTime );
@@ -372,7 +387,7 @@ public class CarController : MonoBehaviour
         isTractionLocked = true;
         carParticalsSystem.ApplyParticals();
     }
-    private void ApplyTraction()
+    public void ApplyTraction()
     {
         isTractionLocked = false;
         driftAxis = driftAxis - (Time.deltaTime / 1.5f);
