@@ -40,7 +40,7 @@ public class CarController : MonoBehaviour
     float RRWextremumSlip;
 
     [Header("Inner Physics")]
-    Rigidbody carRigidbody; 
+    public Rigidbody carRigidbody; 
     float     steerAxis; 
     float     throttAxis = 0; 
     float     driftAxis;
@@ -106,6 +106,10 @@ public class CarController : MonoBehaviour
             if (Input.GetKey(KeyCode.S))
             {
                 Revers();
+            }
+            if(Input.GetKeyUp(KeyCode.S))
+            {
+                GetComponent<CarLightHandler>().StopHandBrakeLight();
             }
             if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.S))
             {
@@ -222,6 +226,8 @@ public class CarController : MonoBehaviour
     }
     private void ForwardSlip()
     {
+        GetComponent<CarLightHandler>().StartHandBrakeLight();
+
         if (Mathf.Abs(XVelocity) > 2.5)
         {
             isDrifting = true;
@@ -267,7 +273,8 @@ public class CarController : MonoBehaviour
     }
     public void Revers()
     {
-       if (Mathf.Abs(XVelocity) > 2.5)
+        GetComponent<CarLightHandler>().StartHandBrakeLight();
+        if (Mathf.Abs(XVelocity) > 2.5)
         {
             isDrifting = true;
             carParticalsSystem.ApplyParticals();
@@ -301,6 +308,7 @@ public class CarController : MonoBehaviour
         }
         else
         {
+
             StopThrottle();
         }
     }
@@ -350,6 +358,7 @@ public class CarController : MonoBehaviour
     }
     public void HandBrake()
     {
+        GetComponent<CarLightHandler>().StartHandBrakeLight();
         CancelInvoke("ApplyTraction");
         driftAxis = driftAxis + (Time.deltaTime );
       float startDriftPoint = driftAxis * FLWextremumSlip * handBrakeForDriftMultiplier;
@@ -389,6 +398,8 @@ public class CarController : MonoBehaviour
     }
     public void ApplyTraction()
     {
+        GetComponent<CarLightHandler>().StopHandBrakeLight();
+
         isTractionLocked = false;
         driftAxis = driftAxis - (Time.deltaTime / 1.5f);
         if(driftAxis < 0)
