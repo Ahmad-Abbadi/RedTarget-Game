@@ -5,7 +5,7 @@ using TMPro;
 public class dropdownlistselect : MonoBehaviour
 {
     [SerializeField]private GameObject G;
-    public GameObject indexzerofromthedropdownlist;
+    [SerializeField]private GameObject G1;
 
     public void select(int index)
     {
@@ -13,15 +13,19 @@ public class dropdownlistselect : MonoBehaviour
         {
             case 0:
                 G.SetActive(false);
+                G1.SetActive(false);
                 break;
             case 1:
                 G.SetActive(true);
+                G1.SetActive(false);
                 break;
             case 2:
                 G.SetActive(false);
+                G1.SetActive(true);
                 break;
             case 3:
                 G.SetActive(false);
+                G1.SetActive(false);
                 break;
             default:
                 break;
