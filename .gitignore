@@ -70,3 +70,5 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Assets/CartoonTracksPack1/Track1/Textures/road.psd
+Assets/CartoonTracksPack1/Track1/Textures/road_normal.png
