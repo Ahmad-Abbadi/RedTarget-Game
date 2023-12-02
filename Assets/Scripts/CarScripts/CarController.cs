@@ -8,6 +8,7 @@ public class CarController : MonoBehaviour
 {
 
     [SerializeField] bool IsAi;
+    [SerializeField] bool player1 = true;
     [Header("Wheels")]
     [SerializeField]  WheelCollider FLW;
     [SerializeField] WheelCollider FRW;
@@ -56,6 +57,8 @@ public class CarController : MonoBehaviour
     CarParticalsSystem carParticalsSystem;
     void Start()
     {
+
+       
         carParticalsSystem = GetComponent<CarParticalsSystem>();
         /////////////////////////////////////////////////////////
         FLWFriction = new WheelFrictionCurve();
@@ -99,52 +102,104 @@ public class CarController : MonoBehaviour
 
         if (!IsAi)
         {
-            if (Input.GetKey(KeyCode.W))
+            // Player 1 controls
+            if (player1)
             {
-                Forward();
+                if (Input.GetKey(KeyCode.W))
+                {
+                    Forward();
+                }
+                if (Input.GetKey(KeyCode.S))
+                {
+                    Revers();
+                }
+                if (Input.GetKeyUp(KeyCode.S))
+                {
+                    GetComponent<CarLightHandler>().StopHandBrakeLight();
+                }
+                if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.S))
+                {
+                    ForwardSlip();
+                    carParticalsSystem.ApplyParticals(true);
+                }
+                if (Input.GetKey(KeyCode.A))
+                {
+                    Left();
+                }
+                if (Input.GetKey(KeyCode.D))
+                {
+                    Right();
+                }
+                if (Input.GetKey(KeyCode.Space))
+                {
+                    HandBrake();
+                }
+                if (Input.GetKeyUp(KeyCode.Space))
+                {
+                    ApplyTraction();
+                }
+                if (!Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.W))
+                {
+                    StopCar();
+                }
+                if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+                {
+                    ResetSteeringAngle();
+                }
             }
-            if (Input.GetKey(KeyCode.S))
+            else
             {
-                Revers();
-            }
-            if(Input.GetKeyUp(KeyCode.S))
-            {
-                GetComponent<CarLightHandler>().StopHandBrakeLight();
-            }
-            if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.S))
-            {
-                ForwardSlip();
-                carParticalsSystem.ApplyParticals(true);
+                // Player 2 controls
+                if (Input.GetKey(KeyCode.UpArrow))
+                {
+                    Forward();
+                }
+                if (Input.GetKey(KeyCode.DownArrow))
+                {
+                    Revers();
 
+                }
+                if (Input.GetKeyUp(KeyCode.DownArrow))
+                {
+                    GetComponent<CarLightHandler>().StopHandBrakeLight();
+                    // Example: GetComponent<Player2CarLightHandler>().StopHandBrakeLight();
+                }
+                if (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.DownArrow))
+                {
+                    ForwardSlip();
+                    carParticalsSystem.ApplyParticals(true);
+                }
+                if (Input.GetKey(KeyCode.LeftArrow))
+                {
+                    Left();
+                }
+                if (Input.GetKey(KeyCode.RightArrow))
+                {
+                    Right();
+                }
+                if (Input.GetKey(KeyCode.P))
+                {
+                    HandBrake();
+                }
+                if (Input.GetKeyUp(KeyCode.P))
+                {
+                    ApplyTraction();
+                }
+                if (!Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.DownArrow))
+                {
+                    StopCar();
+                }
+                if (!Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow))
+                {
+                    ResetSteeringAngle();
+                }
             }
-            if (Input.GetKey(KeyCode.A))
-            {
-                Left();
-            }
-            if (Input.GetKey(KeyCode.D))
-            {
-                Right();
-            }
-            if (Input.GetKey(KeyCode.Space))
-            {
-                HandBrake();
-            }
-            if (Input.GetKeyUp(KeyCode.Space))
-            {
-                ApplyTraction();
-            }
-            if (!Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.W))
-            {
-                StopCar();
-            }
-            if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
-            {
-                ResetSteeringAngle();
-            }
+
         }
 
-            XVelocity = transform.InverseTransformDirection(carRigidbody.velocity).x;
-            zVelocity = transform.InverseTransformDirection(carRigidbody.velocity).z;
+
+        XVelocity = transform.InverseTransformDirection(carRigidbody.velocity).x;
+        zVelocity = transform.InverseTransformDirection(carRigidbody.velocity).z;
         }
     public void SetSteeringInput(float input)
     {
