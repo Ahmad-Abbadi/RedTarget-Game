@@ -18,7 +18,7 @@ public class dropdownlistselect : MonoBehaviour
                 G3.SetActive(false);
                 break;
             case 1:
-                G.SetActive(true);
+                G.SetActive(false);
                 G1.SetActive(false);
                 G2.SetActive(false);
                 G3.SetActive(true);
