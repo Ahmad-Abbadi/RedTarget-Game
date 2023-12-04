@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class back_ground_lock : MonoBehaviour
 {
@@ -12,7 +14,8 @@ public class back_ground_lock : MonoBehaviour
         //G.GetComponent<Animator>().enabled = false;
         //G.StopPlayback();
         // error // G.GetComponent<Animator>().Stop();
-        G.GetComponent<Animator>().StopPlayback();
+        //G.GetComponent<Animator>().StopPlayback();
+        G.GetComponent<Animator>().enabled = false;
     }
 
     
