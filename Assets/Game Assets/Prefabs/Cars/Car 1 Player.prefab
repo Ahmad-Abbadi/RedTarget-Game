@@ -1426,6 +1426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsAi: 0
+  player1: 0
   FLW: {fileID: 3511545373040985477}
   FRW: {fileID: 4099322019933797409}
   BLW: {fileID: 8375978186536078704}
