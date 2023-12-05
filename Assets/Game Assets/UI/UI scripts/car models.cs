@@ -25,12 +25,24 @@ public class carmodels : MonoBehaviour
         
     }
 
-    public void changecar()
+    public void changeCarRightclick()
     {
         car__[index].SetActive(false);index++;
         if(index == car__.Length)
         {
             index = 0;
+        }
+        car__[index].SetActive(true);
+
+        PlayerPrefs.SetInt("selectdcar", index);
+    }
+
+    public void changeCarLeftclick()
+    {
+        car__[index].SetActive(false); index--;
+        if (index == -1)
+        {
+            index = car__.Length - 1;
         }
         car__[index].SetActive(true);
 
