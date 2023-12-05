@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class carmodels : MonoBehaviour
 {
-    public int currentindex;
-    public GameObject[] carmodel;
+    public int index;
+    public GameObject[] car__;
 
     // Start is called before the first frame update
     void Start()
     {
-        currentindex = PlayerPrefs.GetInt("selectdcar",0);
-       foreach(GameObject car in carmodel)
+        index = PlayerPrefs.GetInt("selectdcar",0);
+       foreach(GameObject car in car__)
         {
             car.SetActive(false);
         }
-        carmodel[currentindex].SetActive(true);
+        car__[index].SetActive(true);
 
     }
 
@@ -23,5 +23,17 @@ public class carmodels : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void changecar()
+    {
+        car__[index].SetActive(false);index++;
+        if(index == car__.Length)
+        {
+            index = 0;
+        }
+        car__[index].SetActive(true);
+
+        PlayerPrefs.SetInt("selectdcar", index);
     }
 }
