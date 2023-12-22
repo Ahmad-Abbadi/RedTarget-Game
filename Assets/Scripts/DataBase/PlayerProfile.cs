@@ -2,20 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 
 public class PlayerProfile : MonoBehaviour
 {
-
+    public bool isAi;
     public string playerName ;
     public int carType;
-    //[SerializeField] bool isPlayerAi;
+    public bool player1;
+    public bool player2;
+   // public int coins;
 
-    //[SerializeField] Text playerInput;
-    
-  //  [SerializeField] int carType;
-    //[SerializeField] Text MeshplayerName ;
     void Start()
     {
         

@@ -1,13 +1,14 @@
 using System;
 using System.Collections;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 
 public class CarController : MonoBehaviour
 {
 
-    [SerializeField] bool IsAi;
+    public bool IsAi;
     [SerializeField] bool player1 = true;
     [Header("Wheels")]
     [SerializeField]  WheelCollider FLW;
