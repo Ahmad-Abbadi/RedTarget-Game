@@ -13,8 +13,7 @@ public class PlayerProfile : MonoBehaviour
     public int carType;
     public bool player1;
     public bool player2;
-   // public int coins;
-
+    public float time;
     void Start()
     {
         

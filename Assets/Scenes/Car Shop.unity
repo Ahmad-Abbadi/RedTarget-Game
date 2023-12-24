@@ -210,6 +210,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 745483915}
     m_Modifications:
+    - target: {fileID: 3057927608345797823, guid: 39deda189b5d1804a9e1f96533784520,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3057927608345797823, guid: 39deda189b5d1804a9e1f96533784520,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6680169903735263050, guid: 39deda189b5d1804a9e1f96533784520,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1292,6 +1302,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 745483915}
     m_Modifications:
+    - target: {fileID: 1796091466626268421, guid: 92dc9059c105be646920e7793f7b87ad,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1796091466626268421, guid: 92dc9059c105be646920e7793f7b87ad,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3570467722899339742, guid: 92dc9059c105be646920e7793f7b87ad,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1372,7 +1392,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8362846254289722453, guid: 92dc9059c105be646920e7793f7b87ad,
+        type: 3}
+      propertyPath: carEngineSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8362846254289722453, guid: 92dc9059c105be646920e7793f7b87ad,
+        type: 3}
+      propertyPath: tireScreechSound
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7998506328182556484, guid: 92dc9059c105be646920e7793f7b87ad, type: 3}
+    - {fileID: 3930095623363666867, guid: 92dc9059c105be646920e7793f7b87ad, type: 3}
+    - {fileID: 8592285938803012621, guid: 92dc9059c105be646920e7793f7b87ad, type: 3}
+    - {fileID: 8362846254289722453, guid: 92dc9059c105be646920e7793f7b87ad, type: 3}
     m_RemovedGameObjects:
     - {fileID: 5999982872464239223, guid: 92dc9059c105be646920e7793f7b87ad, type: 3}
     m_AddedGameObjects: []
@@ -1389,7 +1423,7 @@ GameObject:
   - component: {fileID: 920140864}
   - component: {fileID: 920140863}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: Data Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1846,6 +1880,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 745483915}
     m_Modifications:
+    - target: {fileID: 1196681962870637707, guid: a39ace4ad51671445bd5c142a311deb4,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1196681962870637707, guid: a39ace4ad51671445bd5c142a311deb4,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5475586877776884897, guid: a39ace4ad51671445bd5c142a311deb4,
+        type: 3}
+      propertyPath: carEngineSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5475586877776884897, guid: a39ace4ad51671445bd5c142a311deb4,
+        type: 3}
+      propertyPath: tireScreechSound
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7657205477522760294, guid: a39ace4ad51671445bd5c142a311deb4,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1928,6 +1982,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5729943076758977695, guid: a39ace4ad51671445bd5c142a311deb4, type: 3}
+    - {fileID: 7720340483512024809, guid: a39ace4ad51671445bd5c142a311deb4, type: 3}
+    - {fileID: 1619040078184926119, guid: a39ace4ad51671445bd5c142a311deb4, type: 3}
+    - {fileID: 5475586877776884897, guid: a39ace4ad51671445bd5c142a311deb4, type: 3}
     m_RemovedGameObjects:
     - {fileID: 188861421537679509, guid: a39ace4ad51671445bd5c142a311deb4, type: 3}
     - {fileID: 5640548309335999837, guid: a39ace4ad51671445bd5c142a311deb4, type: 3}
@@ -2575,6 +2632,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6479185255018276786, guid: d75f43f834177b847ab9b9b1e0de4487,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6479185255018276786, guid: d75f43f834177b847ab9b9b1e0de4487,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

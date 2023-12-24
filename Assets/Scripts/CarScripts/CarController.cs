@@ -9,7 +9,9 @@ public class CarController : MonoBehaviour
 {
 
     public bool IsAi;
-    [SerializeField] bool player1 = true;
+    public bool player1;
+    public bool player2;
+    //[SerializeField] FileReadWriteDataSaver data;
     [Header("Wheels")]
     [SerializeField]  WheelCollider FLW;
     [SerializeField] WheelCollider FRW;
@@ -56,9 +58,13 @@ public class CarController : MonoBehaviour
 
     [Header("Particals System")]
     CarParticalsSystem carParticalsSystem;
+
+    public bool Player1 { get => player1; set => player1 = value; }
+    public bool Player2 { get => player2; set => player2 = value; }
+
     void Start()
     {
-
+      
        
         carParticalsSystem = GetComponent<CarParticalsSystem>();
         /////////////////////////////////////////////////////////
@@ -97,6 +103,11 @@ public class CarController : MonoBehaviour
 
     void Update()
     {
+
+      
+
+
+
         UpdateWheelMesh();
 
         carSpeed = (2 * Mathf.PI * FRW.radius * FRW.rpm * 60) / 1000;
@@ -148,7 +159,7 @@ public class CarController : MonoBehaviour
                     ResetSteeringAngle();
                 }
             }
-            else
+            else if (player2)
             {
                 // Player 2 controls
                 if (Input.GetKey(KeyCode.UpArrow))

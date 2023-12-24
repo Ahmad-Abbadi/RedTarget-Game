@@ -12,12 +12,13 @@ public class CarsActiveApi : MonoBehaviour
 
     private void Start()
     {
-        for(int i = 0; i < 1000; i++)
+        for(int i = 0; i < 100000; i++)
         {
 
         }
         for (int i = 0; i < allCars.transform.childCount; i++)
         {
+            Debug.Log(i);
             CarType carType = allCars.transform.GetChild(i).GetComponent<CarType>();
 
             if (carType != null)
@@ -42,6 +43,9 @@ public class CarsActiveApi : MonoBehaviour
                 {
                     carType.gameObject.GetComponent<CarAi>().enabled = false;
                     carType.gameObject.SetActive(true);
+                    carType.gameObject.GetComponent<CarController>().player1 = true;
+                    carType.gameObject.GetComponent<CarController>().player2 = false;
+
                     break;
                 }
             }
@@ -68,6 +72,8 @@ public class CarsActiveApi : MonoBehaviour
                 {
                     carType.gameObject.SetActive(true);
                     carType.gameObject.GetComponent<CarAi>().enabled = false;
+                    carType.gameObject.GetComponent<CarController>().player1 = false;
+                    carType.gameObject.GetComponent<CarController>().player2 = true;
                     break;
                 }
             }

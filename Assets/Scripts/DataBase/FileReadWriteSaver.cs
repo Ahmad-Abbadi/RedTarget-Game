@@ -10,7 +10,6 @@ public class FileReadWriteDataSaver : DataSaveBase
     private List<PlayerProfile> playerProfiles = new List<PlayerProfile>();
 
     private PlayerProfile player = new PlayerProfile();
-
     public PlayerProfile player1 = new PlayerProfile();
     public PlayerProfile player2 = new PlayerProfile();
 
@@ -22,6 +21,7 @@ public class FileReadWriteDataSaver : DataSaveBase
     public int carType = 0;
 
     public carmodels cars;
+
 
 
     private void Start()
@@ -107,6 +107,7 @@ public class FileReadWriteDataSaver : DataSaveBase
     }
      public void CarTypePlayer1()
     {
+        Debug.Log(cars.index);
         player1.carType = cars.index;
         Player1();
     }
@@ -135,7 +136,7 @@ public class FileReadWriteDataSaver : DataSaveBase
                 // Write each player profile as a line in CSV format
                 Debug.Log(playerProfile.playerName + "  Save()");
 
-                writer.WriteLine($"{playerProfile.playerName},{playerProfile.carType},{playerProfile.isAi},{playerProfile.player1},{playerProfile.player2}");
+                writer.WriteLine($"{playerProfile.playerName},{playerProfile.carType},{playerProfile.isAi},{playerProfile.player1},{playerProfile.player2},{playerProfile.time}");
             }
         }
     }
@@ -160,15 +161,13 @@ public class FileReadWriteDataSaver : DataSaveBase
                     lines.Add(currentLine);
                 }
 
-                // Ensure that the lines list is not null
                 if (lines != null)
                 {
                     foreach (string line in lines)
                     {
                         string[] values = line.Split(',');
 
-                        // Ensure that the line has the expected number of values
-                        if (values.Length ==5)
+                        if (values.Length == 6)
                         {
                             PlayerProfile newProfile = new PlayerProfile();
                             newProfile.playerName = values[0];
@@ -176,6 +175,7 @@ public class FileReadWriteDataSaver : DataSaveBase
                             newProfile.isAi    = bool.Parse(values[2]);
                             newProfile.player1 = bool.Parse(values[3]);
                             newProfile.player2 = bool.Parse(values[4]);
+                            newProfile.time =    float.Parse(values[5]);
                             playerProfiles.Add(newProfile);
                         }
                         else
@@ -208,7 +208,7 @@ public class FileReadWriteDataSaver : DataSaveBase
             foreach (var playerProfile in playerProfiles)
             {
                 Debug.Log("Player Name: " + playerProfile.playerName + ", Car Type: " + playerProfile.carType +
-                    ", isPlayer1= " + playerProfile.player1 + ", isPlayer2= "+playerProfile.player2);
+                    ", isPlayer1= " + playerProfile.player1 + ", isPlayer2= "+playerProfile.player2+ " time = "+ playerProfile.time);
             }
         }
         else

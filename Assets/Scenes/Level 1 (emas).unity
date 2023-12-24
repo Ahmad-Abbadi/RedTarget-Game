@@ -8201,10 +8201,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2029744846}
-    - targetCorrespondingSourceObject: {fileID: 8484030449367306885, guid: a39ace4ad51671445bd5c142a311deb4,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2029744852}
   m_SourcePrefab: {fileID: 100100000, guid: a39ace4ad51671445bd5c142a311deb4, type: 3}
 --- !u!1001 &565862462
 PrefabInstance:
@@ -10802,7 +10798,6 @@ GameObject:
   m_Component:
   - component: {fileID: 753148590}
   - component: {fileID: 753148591}
-  - component: {fileID: 753148592}
   m_Layer: 0
   m_Name: Win
   m_TagString: Untagged
@@ -10840,26 +10835,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 19.291687, y: 4.5861883, z: 1}
   m_Center: {x: -1.4952393, y: 1.7930942, z: 0}
---- !u!114 &753148592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 753148589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67524634b66ec3d469db80ad1a8a8576, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particle: {fileID: 6052384555641255169, guid: cd5e631c37b039d4ea97eb2c1afc9add,
-    type: 3}
 --- !u!1 &755571559 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6096161435309845058, guid: 92dc9059c105be646920e7793f7b87ad,
@@ -10898,40 +10879,6 @@ MonoBehaviour:
   engine: 200
   steeringSpeed: 3
   targetAngle: 0
---- !u!65 &755571572
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 755571559}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.8911163, y: 1, z: 4.3311577}
-  m_Center: {x: 0.084910445, y: 0, z: -0.049546584}
---- !u!114 &755571573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 755571559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c764c3ed7e3d98245987c9d4d7a9a366, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startTime: 0
 --- !u!198 &761839865 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 7992150137977930682, guid: 39deda189b5d1804a9e1f96533784520,
@@ -23751,6 +23698,7 @@ MonoBehaviour:
   IsAi: 0
   player1: 1
   player2: 0
+  data: {fileID: 0}
   FLW: {fileID: 735744048}
   FRW: {fileID: 1384637697}
   BLW: {fileID: 740802841}
@@ -23804,19 +23752,6 @@ MonoBehaviour:
   engine: 150
   steeringSpeed: 3
   targetAngle: 0
---- !u!114 &1556179244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1556179234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c764c3ed7e3d98245987c9d4d7a9a366, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startTime: 0
 --- !u!1001 &1569053584
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24111,10 +24046,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1556179242}
-    - targetCorrespondingSourceObject: {fileID: 4135619687817387230, guid: d75f43f834177b847ab9b9b1e0de4487,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1556179244}
     - targetCorrespondingSourceObject: {fileID: 3411432950224335670, guid: d75f43f834177b847ab9b9b1e0de4487,
         type: 3}
       insertIndex: -1
@@ -27685,14 +27616,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 755571566}
-    - targetCorrespondingSourceObject: {fileID: 6096161435309845058, guid: 92dc9059c105be646920e7793f7b87ad,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 755571572}
-    - targetCorrespondingSourceObject: {fileID: 6096161435309845058, guid: 92dc9059c105be646920e7793f7b87ad,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 755571573}
   m_SourcePrefab: {fileID: 100100000, guid: 92dc9059c105be646920e7793f7b87ad, type: 3}
 --- !u!43 &1801997469
 Mesh:
@@ -29690,10 +29613,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1967862277}
-    - targetCorrespondingSourceObject: {fileID: 7584029088948849421, guid: 39deda189b5d1804a9e1f96533784520,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1967862279}
   m_SourcePrefab: {fileID: 100100000, guid: 39deda189b5d1804a9e1f96533784520, type: 3}
 --- !u!4 &1967862270 stripped
 Transform:
@@ -29762,6 +29681,7 @@ MonoBehaviour:
   IsAi: 0
   player1: 1
   player2: 0
+  data: {fileID: 0}
   FLW: {fileID: 2102244651}
   FRW: {fileID: 1726050755}
   BLW: {fileID: 647061665}
@@ -29815,19 +29735,6 @@ MonoBehaviour:
   engine: 200
   steeringSpeed: 3
   targetAngle: 0
---- !u!114 &1967862279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 184666237}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c764c3ed7e3d98245987c9d4d7a9a366, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startTime: 0
 --- !u!1 &1969258167
 GameObject:
   m_ObjectHideFlags: 0
@@ -30584,19 +30491,6 @@ MonoBehaviour:
   engine: 200
   steeringSpeed: 3
   targetAngle: 0
---- !u!114 &2029744852
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2029744839}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c764c3ed7e3d98245987c9d4d7a9a366, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startTime: 0
 --- !u!1 &2036040661
 GameObject:
   m_ObjectHideFlags: 0
