@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class Win : MonoBehaviour
 {
-    
+    [SerializeField] SwitchScenes swithcScene;
     [SerializeField] GameObject particle;
-    float nextLevelTime = 0;
+    [SerializeField] int currentScene;
+
+    private void Start()
+    {
+        swithcScene = FindAnyObjectByType<SwitchScenes>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other != null)
         {
-            nextLevelTime = Time.time;
+            StartCoroutine(WaitAndSwitchLevel());
             Instantiate(particle, transform.position, transform.rotation);
 
             CarController carController = other.GetComponent<CarController>();
@@ -37,16 +42,29 @@ public class Win : MonoBehaviour
                         data.player1.time = t;
 
                     data.Save();
-                }
+                }   
             }
         }
     }
 
     private void Update()
     {
-        if(Time.time - nextLevelTime > 7f)
+
+
+    }
+
+    private IEnumerator WaitAndSwitchLevel()
+    {
+
+        yield return new WaitForSeconds(7f);
+
+        if (currentScene == 1)
         {
-            //TODO go to next Level
+            swithcScene.ActivateLevelTwo();
+        }
+        else if (currentScene == 2)
+        {
+            swithcScene.ActivateLevelThree();
         }
     }
 }

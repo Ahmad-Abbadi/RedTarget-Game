@@ -1,18 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SwitchScenes : MonoBehaviour
 {
-    // Start is called before the first frame update
+
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
+
+    public void ActivateLevelOne()
+    {
+      SceneManager.LoadScene(2);
+    }
+
+    public void ActivateLevelTwo()
+    {
+        SceneManager.LoadScene(3);
+    }
+
+    public void ActivateLevelThree()
+    {
+        SceneManager.LoadScene(4);
+    }
+
+    public void ActivateCarShop()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void ActivateUiScene() 
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void ActivateSelectionScene() 
+    {
+        SceneManager.LoadScene(5);
+    }
 }
+
