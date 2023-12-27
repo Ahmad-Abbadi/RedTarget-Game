@@ -26,12 +26,12 @@ public class GameInfo : MonoBehaviour
         timePlayer1.text = data.player1.time.ToString(); 
         timePlayer2.text = data.player2.time.ToString(); 
 
-        if (data.player1.time > data.player2.time)
+        if (data.player1.time < data.player2.time)
         {
             sPlayer1.text = "Winner";
             sPlayer2.text = "Loser";
         }
-        else if (data.player1.time < data.player2.time)
+        else if (data.player1.time > data.player2.time)
         {
             sPlayer1.text = "Loser";
             sPlayer2.text = "Winner";

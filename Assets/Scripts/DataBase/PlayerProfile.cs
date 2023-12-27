@@ -13,19 +13,7 @@ public class PlayerProfile : MonoBehaviour
     public int carType;
     public bool player1;
     public bool player2;
+    public int coins = 0;
     public float time;
-    void Start()
-    {
-        
-    }
 
-    void Update()
-    {
-       
-    }
-
-    //public void SetPlayerName(Text tempName)
-    //{
-    //    playerName = tempName.text;
-    //}
 }

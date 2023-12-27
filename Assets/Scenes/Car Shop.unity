@@ -243,7 +243,7 @@ PrefabInstance:
     - target: {fileID: 6680169903735263050, guid: 39deda189b5d1804a9e1f96533784520,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6680169903735263050, guid: 39deda189b5d1804a9e1f96533784520,
         type: 3}
@@ -1103,8 +1103,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 157130462}
-  - {fileID: 1889952089}
   - {fileID: 413714357}
+  - {fileID: 1889952089}
   - {fileID: 1602430728}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0.195, y: 46.611, z: -0.313}
@@ -1123,8 +1123,8 @@ MonoBehaviour:
   index: 0
   car__:
   - {fileID: 157130461}
-  - {fileID: 1889952088}
   - {fileID: 413714356}
+  - {fileID: 1889952088}
   - {fileID: 1602430727}
 --- !u!1 &782365277
 GameObject:
@@ -1490,6 +1490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ff00f600612b4440b01576594aaee26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerProfiles: []
   player1: {fileID: 0}
   player2: {fileID: 0}
   isMainMenu: 1

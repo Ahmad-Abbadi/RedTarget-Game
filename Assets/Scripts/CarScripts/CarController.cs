@@ -7,7 +7,8 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
-
+     float upsideDownTimer = 0f;
+     bool isUpsideDown = false;
     public bool IsAi;
     public bool player1;
     public bool player2;
@@ -212,7 +213,41 @@ public class CarController : MonoBehaviour
 
         XVelocity = transform.InverseTransformDirection(carRigidbody.velocity).x;
         zVelocity = transform.InverseTransformDirection(carRigidbody.velocity).z;
+
+        CheckUpsideDown();
+    }
+
+    private void CheckUpsideDown()
+    {
+        Quaternion rotation = transform.rotation;
+
+        if (rotation.eulerAngles.z > 90f && rotation.eulerAngles.z < 270f)
+        {
+            upsideDownTimer += Time.deltaTime;
+
+            if (upsideDownTimer >= 1f)
+            {
+                isUpsideDown = true;
+                RepositionCar();
+            }
         }
+        else
+        {
+            upsideDownTimer = 0f;
+            isUpsideDown = false;
+        }
+    }
+
+    private void RepositionCar()
+    {
+        if (isUpsideDown)
+        {
+            transform.rotation = Quaternion.identity; 
+            transform.position += Vector3.up * 0.5f;   
+
+        }
+    }
+
     public void SetSteeringInput(float input)
     {
         

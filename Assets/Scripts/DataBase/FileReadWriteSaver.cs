@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class FileReadWriteDataSaver : DataSaveBase
 {
-    private List<PlayerProfile> playerProfiles = new List<PlayerProfile>();
+    public List<PlayerProfile> playerProfiles = new List<PlayerProfile>();
 
     private PlayerProfile player = new PlayerProfile();
     public PlayerProfile player1 = new PlayerProfile();
@@ -118,7 +118,6 @@ public class FileReadWriteDataSaver : DataSaveBase
     }
     public void Player1()
     {
-        //player1.carType = cars.index;
         Debug.Log($"player1 name: {player1.playerName}, carType: {player1.carType}, is Ai? {player1.isAi}");
     }
     public void Player2()
@@ -133,10 +132,9 @@ public class FileReadWriteDataSaver : DataSaveBase
         {
             foreach (var playerProfile in playerProfiles)
             {
-                // Write each player profile as a line in CSV format
                 Debug.Log(playerProfile.playerName + "  Save()");
 
-                writer.WriteLine($"{playerProfile.playerName},{playerProfile.carType},{playerProfile.isAi},{playerProfile.player1},{playerProfile.player2},{playerProfile.time}");
+                writer.WriteLine($"{playerProfile.playerName},{playerProfile.carType},{playerProfile.isAi},{playerProfile.player1},{playerProfile.player2},{playerProfile.time},{playerProfile.coins}");
             }
         }
     }
@@ -154,7 +152,6 @@ public class FileReadWriteDataSaver : DataSaveBase
             {
                 List<string> lines = new List<string>();
 
-                // Read all lines into a list
                 string currentLine;
                 while ((currentLine = reader.ReadLine()) != null)
                 {
@@ -167,7 +164,7 @@ public class FileReadWriteDataSaver : DataSaveBase
                     {
                         string[] values = line.Split(',');
 
-                        if (values.Length == 6)
+                        if (values.Length == 7)
                         {
                             PlayerProfile newProfile = new PlayerProfile();
                             newProfile.playerName = values[0];
@@ -175,7 +172,8 @@ public class FileReadWriteDataSaver : DataSaveBase
                             newProfile.isAi    = bool.Parse(values[2]);
                             newProfile.player1 = bool.Parse(values[3]);
                             newProfile.player2 = bool.Parse(values[4]);
-                            newProfile.time =    float.Parse(values[5]);
+                            newProfile.time    = float.Parse(values[5]);
+                            newProfile.coins   = int.Parse(values[6]);
                             playerProfiles.Add(newProfile);
                         }
                         else
@@ -219,15 +217,12 @@ public class FileReadWriteDataSaver : DataSaveBase
 
     public void EditCarType(string playerName, int newCarType)
     {
-        // Find the player profile with the given player name
         PlayerProfile targetPlayer = playerProfiles.Find(profile => profile.playerName == playerName);
 
         if (targetPlayer != null)
         {
-            // Update the car type
             targetPlayer.carType = newCarType;
 
-            // Save the changes to the file
             Save();
 
             Debug.Log($"Car type for {playerName} updated to {newCarType}");
