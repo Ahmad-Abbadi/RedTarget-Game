@@ -5,12 +5,12 @@ using UnityEngine;
 public class carmodels : MonoBehaviour
 {
     public int index;
-    public GameObject[] car__;
+    public GameObject[] car__ = new GameObject[4];
 
     // Start is called before the first frame update
     void Start()
     {
-        index = PlayerPrefs.GetInt("selectdcar",0);
+       index = PlayerPrefs.GetInt("selectdcar", 0);
        foreach(GameObject car in car__)
         {
             car.SetActive(false);
