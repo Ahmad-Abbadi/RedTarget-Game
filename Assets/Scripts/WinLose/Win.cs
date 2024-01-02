@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using TMPro;
 using UnityEngine;
 
 public class Win : MonoBehaviour
 {
     bool startCount;
     float time = 7;
+    [SerializeField] TextMeshProUGUI timerText;
+    //[SerializeField] float remainingTime;
     [SerializeField] SwitchScenes swithcScene;
     [SerializeField] GameObject particle;
     [SerializeField] int currentScene;
@@ -67,7 +70,14 @@ public class Win : MonoBehaviour
 
         }
         else
-        time -= Time.deltaTime;
+        {
+            time -= Time.deltaTime;
+            int minutes = Mathf.FloorToInt(time / 60);
+            int seconds = Mathf.FloorToInt(time % 60);
+            timerText.text = string.Format("{0:00}:{1:00}",minutes,seconds);
+            Debug.Log("Test");
+        }
+        
 
         Debug.Log(time);
     }
