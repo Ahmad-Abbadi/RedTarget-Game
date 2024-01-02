@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class Win : MonoBehaviour
 {
+    bool startCount;
+    float time = 7;
     [SerializeField] SwitchScenes swithcScene;
     [SerializeField] GameObject particle;
     [SerializeField] int currentScene;
@@ -16,6 +19,7 @@ public class Win : MonoBehaviour
     {
         if (other != null)
         {
+            startCount = true;
             StartCoroutine(WaitAndSwitchLevel());
             Instantiate(particle, transform.position, transform.rotation);
 
@@ -49,10 +53,24 @@ public class Win : MonoBehaviour
 
     private void Update()
     {
-
+        if(startCount)
+        {
+            Countdown();
+        }
 
     }
 
+    void Countdown()
+    {
+        if(time < 0.01f)
+        {
+
+        }
+        else
+        time -= Time.deltaTime;
+
+        Debug.Log(time);
+    }
     private IEnumerator WaitAndSwitchLevel()
     {
 
