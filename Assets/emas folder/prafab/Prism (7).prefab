@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 659972241994202894}
   - component: {fileID: 4907650198196925047}
   - component: {fileID: 3821628240956467651}
-  - component: {fileID: 6723957095971298558}
+  - component: {fileID: 7827823549145842440}
   m_Layer: 0
   m_Name: Prism (7)
   m_TagString: Untagged
@@ -30,9 +30,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6285392426296992267}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.9871987, y: -0.016128281, z: -0.15821917, w: 0.012054992}
+  m_LocalRotation: {x: -0.9871981, y: -0.016129404, z: -0.15822269, w: 0.012051519}
   m_LocalPosition: {x: 332.9, y: 0.5, z: 553.2}
-  m_LocalScale: {x: 0.113285005, y: 0.20391302, z: 0}
+  m_LocalScale: {x: 0.11328501, y: 0.20391302, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -212,7 +212,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1713
+  m_VersionIndex: 1716
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -310,14 +310,14 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!114 &6723957095971298558
+--- !u!114 &7827823549145842440
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -326,9 +326,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6285392426296992267}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c62206705e1c83442b9a8e447cae4a43, type: 3}
+  m_Script: {fileID: 11500000, guid: 713dbae46fbb22649b297a4832f12712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScoreText: {fileID: 0}
-  theScore: 0
-  collectedSound: {fileID: 0}

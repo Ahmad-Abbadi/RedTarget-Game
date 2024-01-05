@@ -41,7 +41,7 @@ public class CarsActiveApi : MonoBehaviour
             {
                 if (carType.CarNumber == data.player1.carType)
                 {
-                    carType.gameObject.GetComponent<CarAi>().enabled = false;
+                  //  carType.gameObject.GetComponent<CarAi>().enabled = false;
                     carType.gameObject.SetActive(true);
                     carType.gameObject.GetComponent<CarController>().player1 = true;
                     carType.gameObject.GetComponent<CarController>().player2 = false;
@@ -71,7 +71,7 @@ public class CarsActiveApi : MonoBehaviour
                 if (carType.CarNumber == data.player2.carType)
                 {
                     carType.gameObject.SetActive(true);
-                    carType.gameObject.GetComponent<CarAi>().enabled = false;
+                  //  carType.gameObject.GetComponent<CarAi>().enabled = false;
                     carType.gameObject.GetComponent<CarController>().player1 = false;
                     carType.gameObject.GetComponent<CarController>().player2 = true;
                     break;
