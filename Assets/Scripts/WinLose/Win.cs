@@ -93,6 +93,9 @@ public class Win : MonoBehaviour
         else if (currentScene == 2)
         {
             swithcScene.ActivateLevelThree();
+        }else if(currentScene == 3)
+        {
+            swithcScene.ActivateRecordScene();
         }
     }
 }
