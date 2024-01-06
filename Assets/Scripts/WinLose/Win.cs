@@ -7,7 +7,7 @@ using UnityEngine;
 public class Win : MonoBehaviour
 {
     bool startCount;
-    float time = 7;
+    float time = 10;
     [SerializeField] TextMeshProUGUI timerText;
     //[SerializeField] float remainingTime;
     [SerializeField] SwitchScenes swithcScene;
