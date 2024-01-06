@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Windows;
 
 public class SwitchScenes : MonoBehaviour
 {
@@ -13,7 +14,14 @@ public class SwitchScenes : MonoBehaviour
 
     void Update()
     {
-        
+        if(UnityEngine.Input.GetKeyDown(KeyCode.Alpha6)) {
+            ActivateSelectionScene();
+        }
+
+        if(UnityEngine.Input.GetKeyDown(KeyCode.Alpha7))
+        {
+            ActivateUiScene();
+        }
     }
 
     public void ActivateLevelOne()
