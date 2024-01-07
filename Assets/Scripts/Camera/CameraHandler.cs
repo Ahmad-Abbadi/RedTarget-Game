@@ -8,7 +8,7 @@ public class CameraHandler : MonoBehaviour
     void Start()
     {
         isPlayer1 = GetComponentInParent<CarController>().player1;
-        if(isPlayer1)
+        if(!isPlayer1)
         {
             Camera camera = GetComponent<Camera>();
             Rect viewPort = new Rect(0.5f, 0, 1, 1);

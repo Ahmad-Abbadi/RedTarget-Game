@@ -4,14 +4,6 @@ using UnityEngine;
 
 public class Coins : MonoBehaviour
 {
-
-
-
-
-
-
-
-
     private void OnTriggerEnter(Collider collision)
     {
         FileReadWriteDataSaver data = FindAnyObjectByType<FileReadWriteDataSaver>();
