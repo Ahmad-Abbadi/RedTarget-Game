@@ -57,5 +57,9 @@ public class SwitchScenes : MonoBehaviour
     {
         SceneManager.LoadScene(3);
     }
+    public void Activate_UI_for_C_sharp()
+    {
+        SceneManager.LoadScene(7);
+    }
 }
 

@@ -4648,7 +4648,7 @@ PrefabInstance:
     - target: {fileID: 1045629964384563141, guid: cb3d7c739b8ae744db70de698d7da6b7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ActivateUiScene
+      value: Activate_UI_for_C_sharp
       objectReference: {fileID: 0}
     - target: {fileID: 1888104021829844910, guid: cb3d7c739b8ae744db70de698d7da6b7,
         type: 3}
