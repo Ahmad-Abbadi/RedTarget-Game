@@ -328,7 +328,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1cc0f08c5e468eb458d585deb13c9aa6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8c9c500f709a0d24cb8f9c1b4b734eef, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -530,7 +530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.92549026, g: 0.08235294, b: 0.121568635, a: 1}
+  m_Color: {r: 0.32941177, g: 0.43529415, b: 0.48627454, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3262,7 +3262,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1eba18fb9ea6a2947b3245de2707d55f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 428e633d0a28b5c4db90d8e51813c0ce, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3390,6 +3390,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1807845765}
+        m_TargetAssemblyTypeName: textboxclearscript, Assembly-CSharp
+        m_MethodName: Start
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5462,6 +5474,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1807845763}
   - component: {fileID: 1807845764}
+  - component: {fileID: 1807845765}
   m_Layer: 0
   m_Name: Control
   m_TagString: Untagged
@@ -5496,6 +5509,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1d3dc79d7f4d64b88bc2137a701aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1807845765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807845762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5705409bf7c43249b788ba9e22d2b14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input: {fileID: 1437627047}
 --- !u!1 &1853622441
 GameObject:
   m_ObjectHideFlags: 0
@@ -6713,7 +6739,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0785820ec0aa3a04a886627266ba379b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  G: {fileID: 0}
 --- !u!114 &2098584267
 MonoBehaviour:
   m_ObjectHideFlags: 0

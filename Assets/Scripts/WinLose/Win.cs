@@ -35,7 +35,7 @@ public class Win : MonoBehaviour
                    FileReadWriteDataSaver data =  FindAnyObjectByType<FileReadWriteDataSaver>();
                 data.player1.time = t;
                 if(data.player2.time == 0) 
-                data.player2.time = t;
+                data.player2.time = t+10;
 
                     data.Save();  
                 
@@ -46,7 +46,7 @@ public class Win : MonoBehaviour
                     FileReadWriteDataSaver data = FindAnyObjectByType<FileReadWriteDataSaver>();
                     data.player2.time = t;
                     if (data.player1.time == 0)
-                        data.player1.time = t;
+                        data.player1.time = t+10;
 
                     data.Save();
                 }   
@@ -84,7 +84,7 @@ public class Win : MonoBehaviour
     private IEnumerator WaitAndSwitchLevel()
     {
 
-        yield return new WaitForSeconds(7f);
+        yield return new WaitForSeconds(10f);
 
         if (currentScene == 1)
         {

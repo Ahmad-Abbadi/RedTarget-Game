@@ -158,7 +158,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8094190019578465751}
   m_Layer: 0
-  m_Name: Game Prefab
+  m_Name: Game Prefab C#
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

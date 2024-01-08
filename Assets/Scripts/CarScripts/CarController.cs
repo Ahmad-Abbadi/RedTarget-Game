@@ -116,7 +116,7 @@ public class CarController : MonoBehaviour
         if (!IsAi)
         {
             // Player 1 controls
-            if (player1)
+            if (player2)
             {
                 if (Input.GetKey(KeyCode.W))
                 {
@@ -160,7 +160,7 @@ public class CarController : MonoBehaviour
                     ResetSteeringAngle();
                 }
             }
-            else if (player2)
+            else if (player1)
             {
                 // Player 2 controls
                 if (Input.GetKey(KeyCode.UpArrow))
