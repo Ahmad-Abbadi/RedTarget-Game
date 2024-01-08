@@ -115,7 +115,7 @@ public class CarController : MonoBehaviour
 
         if (!IsAi)
         {
-            // Player 1 controls
+            // Player 2 controls
             if (player2)
             {
                 if (Input.GetKey(KeyCode.W))
@@ -162,7 +162,7 @@ public class CarController : MonoBehaviour
             }
             else if (player1)
             {
-                // Player 2 controls
+                // Player 1 controls
                 if (Input.GetKey(KeyCode.UpArrow))
                 {
                     Forward();

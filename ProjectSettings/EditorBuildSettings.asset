@@ -19,13 +19,13 @@ EditorBuildSettings:
     guid: 5e5d7dd02b4060c4994a99fa55732ef2
   - enabled: 1
     path: Assets/Scenes/Level 1.unity
-    guid: b465c13be368c9e4a96b572b0405a1da
-  - enabled: 1
-    path: Assets/Scenes/Level 2.unity
     guid: 1c90a6211957fdd478d594fc3f88721f
   - enabled: 1
     path: Assets/Scenes/Level 3.unity
     guid: 67f0ac5ce18604c498bb6022f30112b3
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+    guid: b465c13be368c9e4a96b572b0405a1da
   - enabled: 1
     path: Assets/c#level/UI C#.unity
     guid: e952b910cd192264282a91a9d4e0b3ad
