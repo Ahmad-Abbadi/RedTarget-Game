@@ -5825,6 +5825,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8791802859087666345, guid: b9888d7c514124a44ba3cb3caba1259e,
         type: 3}
+    - target: {fileID: 1768720120363643416, guid: 8cfde56f2c06d3f409df5fa0d41b7957,
+        type: 3}
+      propertyPath: timerText
+      value: 
+      objectReference: {fileID: 1821068473}
     - target: {fileID: 1828744142663877475, guid: 8cfde56f2c06d3f409df5fa0d41b7957,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -19797,6 +19802,18 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!114 &1821068473 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5397200135630839012, guid: c6252ff026efb1e4c82ef972cfdfed8a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1151159488}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1827264300
 PrefabInstance:
   m_ObjectHideFlags: 0
